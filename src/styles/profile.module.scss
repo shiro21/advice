@@ -1,0 +1,52 @@
+@import './color';
+
+.profile_wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px solid #DDD;
+    border-radius: 10px;
+    padding: 1rem;
+    > h1 {
+        position: relative;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #DDD;
+        margin-bottom: 1rem;
+        > span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: .7rem;
+            font-weight: 500;
+        }
+    }
+    .input_wrap {
+        display: flex;
+        align-items: center;
+        font-size: .9rem;
+        margin-bottom: 1rem;
+        .left {
+            font-weight: 700;
+            margin-right: .5rem;
+            width: 80px;
+        }
+        .right {}
+    }
+    > button {
+        width: 100%;
+        height: 48px;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #FFF;
+        background: $main_color;
+        border-radius: 10px;
+        margin-top: 2rem;
+    }
+}
