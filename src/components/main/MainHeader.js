@@ -1,5 +1,8 @@
 import style from '../../styles/main.module.scss';
 import logo from '../../logo.svg';
+import menuBar from '../../styles/icon/menu.svg';
+import profile from '../../styles/icon/profile.svg';
+import bell from '../../styles/icon/bell.svg';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { removeStorage } from '../../js/storage';
@@ -48,24 +51,18 @@ const MainHeader = ({user, notify, parentFunction}) => {
     };
 
     const profileMove = () => {
-        console.log('프로필 무브');
         navigation('/profile', {state: {user}});
     };
 
     const bookmarkMove = () => {
-        console.log('북마크 이동');
         navigation('/bookmark');
     };
 
     const moveNotify = (item) => {
-        // console.log(item.);
-        console.log('알림에서 이동');
         navigation(`/article/${item.article}`);
     }
 
     const logoutMove = () => {
-        console.log('들어옴')
-        
         removeStorage();
         navigation('/login');
     };
@@ -75,7 +72,9 @@ const MainHeader = ({user, notify, parentFunction}) => {
             <div className={style.items}>
                 <h1>
                     <em>
-                        <img src={logo} alt="logo" />
+                        <Link to={"/"}>
+                            <img src={logo} alt="logo" />
+                        </Link>
                     </em>
                 </h1>
             </div>
@@ -88,12 +87,12 @@ const MainHeader = ({user, notify, parentFunction}) => {
                 <div className={style.list_wrap}>
                     <div className={style.list}>
                         <button onClick={profileMove}>
-                            <img src={logo} alt="profile" />
+                            <img src={profile} alt="profile" />
                         </button>
                     </div>
                     <div className={style.list}>
                         <button onClick={() => {listOpen('notification')}}>
-                            <img src={logo} alt="notification" />
+                            <img src={bell} alt="notification" />
                         </button>
                         {
                             notification ? (
@@ -126,7 +125,7 @@ const MainHeader = ({user, notify, parentFunction}) => {
                     </div>
                     <div className={style.list}>
                         <button onClick={() => {listOpen('menu')}}>
-                            <img src={logo} alt="menu" />
+                            <img src={menuBar} alt="menu" />
                         </button>
                         {
                             menu ? (

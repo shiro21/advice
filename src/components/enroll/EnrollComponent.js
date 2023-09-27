@@ -151,8 +151,6 @@ const EnrollComponent = () => {
         let newFiles = [];
         oldFiles = files.filter(arr => typeof arr === "string");
         newFiles = files.filter(arr => typeof arr !== "string");
-        console.log(oldFiles);
-        console.log(newFiles);
 
         if (title.length <= 1) return alert("제목은 2글자 이상입니다.");
         else if (tags.length === 0) return alert("태그를 입력해주세요.");
@@ -161,7 +159,7 @@ const EnrollComponent = () => {
         formData.append('title', title);
         for (let i = 0; i < tags.length; i++) formData.append('tags', tags[i]);
 
-        if (oldFiles.length > 0) for (let i = 0; i < oldFiles.length; i++) formData.append('updateFiles', oldFiles[i]);
+        if (oldFiles.length > 0) formData.append('updateFiles', oldFiles);
         for (let i = 0; i < newFiles.length; i++) formData.append('files', newFiles[i]);
         formData.append('contents', contents);
         formData.append('owner', localStorage.getItem('_advice_user'));

@@ -3,9 +3,10 @@
 ## Intro
 - Solo Project
 - 프로젝트 기간 23일 ( 2022.10.25 ~ 2022.11.16 ) [ 프로젝트 만진 기간 약 15일 ]
+- ID juhny******@gmail.com
 
 ## Tool
-- Front-End : React ( Javascript )
+- Front-End : React ( JSX )
 - Back-End : NodeJS ( Javascript ), Firebase, MongoDB, mongoose
 - Google-Drive : 페이지 정리용
 

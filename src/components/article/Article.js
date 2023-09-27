@@ -13,7 +13,6 @@ const Article = () => {
     const [followArray, setFollowArray] = useState([]);
     
     useEffect(() => {
-        console.log("들어옴");
         api.post('enroll/single', params)
         .then(res => {
             setArticle(res.data.data);
